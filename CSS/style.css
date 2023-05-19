@@ -282,11 +282,8 @@ main:hover {
 }
 
 main thead th {
-    text-align: left;
-    padding: 1em;
-    border-right: 1px solid #000;
-}
-
-main thead th:last-child {
-    border-right: none;
+    text-align: center;
+    width: 80vw;
+    justify-content: space-between;
+    border-bottom: 1px #674f4f;
 }
