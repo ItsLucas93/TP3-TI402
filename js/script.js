@@ -56,11 +56,15 @@ function generer(){
 
     var nbcar = document.createElement("td");
     var date = document.createElement("td");
+    var catego = document.createElement("td");
+    var siteappli = document.createElement("td");
 
-    nbcar.monformulaire.elements["nombrecar"].value;
-    date.monformulaire.elements["date"].value;
+    nbcar.textContent = monformulaire.elements["nombrecar"].value;
+    date.textContent = monformulaire.elements["date"].value;
+    catego.textContent = monformulaire.elements["categorie"].value;
+    siteappli.textContent = monformulaire.elements["siteapp"].value;
 
-    newLine.append(nbcar,date,password);
+    newLine.append(nbcar,date,catego,siteappli,password);
 
     var pwdTab = document.getElementById("montab");
 
