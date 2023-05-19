@@ -265,7 +265,7 @@ thead th {
     border: 1px solid black;
 }
 
-.infopwd {
+main {
     position: relative;
     margin: 20px auto auto;
     width: 90vw;
@@ -273,17 +273,20 @@ thead th {
     border-radius: 10px;
     border: #1c1515;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    padding: 5px;
+    font-weight: bold;
 }
 
-.infopwd:hover {
+main:hover {
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
 }
 
-#infopwd tr th {
-    margin-top: 40px;
-    font-size: 16px;
-    font-weight: bold;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+main thead th {
+    text-align: left;
+    padding: 1em;
+    border-right: 1px solid #000;
+}
+
+main thead th:last-child {
+    border-right: none;
 }
