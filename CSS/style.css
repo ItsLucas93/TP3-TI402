@@ -274,7 +274,6 @@ main {
     border: #1c1515;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
     padding: 5px;
-    font-weight: bold;
     text-align: center;
     justify-content: space-between;
 }
@@ -285,5 +284,6 @@ main:hover {
 
 main thead th {
     width: 80vw;
+    font-weight: bold;
     border-bottom: 1px #674f4f;
 }
