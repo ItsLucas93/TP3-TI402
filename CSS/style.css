@@ -226,13 +226,18 @@ thead th {
 
 #password .password {
     position: relative;
-    margin: auto;
+    margin: 20px auto auto;
     width: 90vw;
     background-color: #beb9b9;
     border-radius: 10px;
     border: #1c1515;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 }
+
+#password .password:hover {
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
 
 #password fieldset {
     margin: 10px;
@@ -258,4 +263,27 @@ thead th {
 
 #password .btn {
     border: 1px solid black;
+}
+
+.infopwd {
+    position: relative;
+    margin: 20px auto auto;
+    width: 90vw;
+    background-color: #beb9b9;
+    border-radius: 10px;
+    border: #1c1515;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.infopwd:hover {
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+#infopwd tr th {
+    margin-top: 40px;
+    font-size: 16px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
