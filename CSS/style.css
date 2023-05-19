@@ -39,7 +39,7 @@ footer {
     position: relative;
 }
 
-section h1, h2, p, li{
+section h1, h2, p, li {
     text-align: center;
 }
 
@@ -48,7 +48,7 @@ section ol {
 }
 
 section li {
-    color:red;
+    color: red;
     list-style: none;
 }
 
@@ -191,7 +191,7 @@ a {
     padding-bottom: 24px;
 }
 
-#information caption:hover{
+#information caption:hover {
     font-family: 'Minecraftia_Regular.ttf', Montserrat, Arial, sans-serif;
 }
 
