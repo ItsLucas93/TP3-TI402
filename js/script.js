@@ -25,10 +25,11 @@ function generer(){
         listecar+=chiffre;
     }
     if (monformulaire.elements["symbole"].checked){
-        listecar+=symbole;
+        listecar+=carspecial;
     }
 
     while(verify(password,monformulaire)===false){
+        password="";
         console.log(password,verify(password,monformulaire));
         for (var i=1; i <= monformulaire.elements["nombrecar"].value;i++){
             var randomNumber = Math.floor(Math.random()*listecar.length);
@@ -36,8 +37,6 @@ function generer(){
             
         }
     }
-
-    
 
     /*console.log(monformulaire.nombrecar.value);*/
 
@@ -55,12 +54,17 @@ function generer(){
     col4.textContent="netflix";
     //col5.textContent="5(_ofsd)fgv";*/
 
-    newLine.append(password);
+    var nbcar = document.createElement("td");
+    var date = document.createElement("td");
+
+    nbcar.monformulaire.elements["nombrecar"].value;
+    date.monformulaire.elements["date"].value;
+
+    newLine.append(nbcar,date,password);
 
     var pwdTab = document.getElementById("montab");
 
     pwdTab.appendChild(newLine);
-
 
 }
 
