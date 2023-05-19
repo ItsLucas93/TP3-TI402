@@ -10,6 +10,37 @@ var majuscule = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var chiffre = "0123456789";
 var carspecial = "%!&*^()#$:";
 
+function hasCharacter(string1, string2) {
+    for (var i = 0; i < string2.length; i++) {if (string1.includes(string2[i])) {return true;}}
+    return false;
+}
+
+function verify(password, monformulaire) {
+    var tab = [0, 0, 0, 0];
+    if (monformulaire.elements["minuscule"].checked) {tab[0] = 1;}
+    if (monformulaire.elements["majuscule"].checked) {tab[1] = 1;}
+    if (monformulaire.elements["chiffre"].checked) {tab[2] = 1;}
+    if (monformulaire.elements["symbole"].checked) {tab[3] = 1;}
+
+    for (var i = 0; i < 4; i++) {
+        switch (i) {
+            case 0: if (tab[i] === 1) {if (hasCharacter(password, minuscule) === false) return false}
+                break;
+            case 1: if (tab[i] === 1) {if (hasCharacter(password, majuscule) === false) return false}
+                break;
+            case 2: if (tab[i] === 1) {if (hasCharacter(password, chiffre) === false) return false}
+                break;
+            case 3: if (tab[i] === 1) {if (hasCharacter(password, carspecial) === false) return false}
+                break;
+        }
+    }
+    return true;
+}
+
+function assertRequiredField(monformulaire){
+    return (monformulaire.elements["minuscule"].checked || monformulaire.elements["majuscule"].checked || monformulaire.elements["chiffre"].checked || monformulaire.elements["symbole"].checked) && (monformulaire.elements["nombrecar"].value !== "" && monformulaire.elements["date"].value !== "dd/mm/yyyy" && monformulaire.elements["categorie"].value !== "" && monformulaire.elements["categorie"].value !== "" && monformulaire.elements["siteapp"].value !== "");
+}
+
 function generer(){
     var monformulaire = document.forms.ajoutPWD;
 
@@ -81,37 +112,4 @@ function generer(){
         pwdTab.appendChild(newLine);
     }
     else {alert("Champs incomplets. Veuillez remplir les champs et cocher l'une des cases.");}
-}
-
-
-function verify(password, monformulaire) {
-    var tab = [0, 0, 0, 0];
-    if (monformulaire.elements["minuscule"].checked) {tab[0] = 1;}
-    if (monformulaire.elements["majuscule"].checked) {tab[1] = 1;}
-    if (monformulaire.elements["chiffre"].checked) {tab[2] = 1;}
-    if (monformulaire.elements["symbole"].checked) {tab[3] = 1;}
-
-    for (var i = 0; i < 4; i++) {
-        switch (i) {
-            case 0: if (tab[i] === 1) {if (hasCharacter(password, minuscule) === false) return false}
-                break;
-            case 1: if (tab[i] === 1) {if (hasCharacter(password, majuscule) === false) return false}
-                break;
-            case 2: if (tab[i] === 1) {if (hasCharacter(password, chiffre) === false) return false}
-                break;
-            case 3: if (tab[i] === 1) {if (hasCharacter(password, carspecial) === false) return false}
-                break;
-        }
-    }
-    return true;
-}
-
-
-function hasCharacter(string1, string2) {
-    for (var i = 0; i < string2.length; i++) {if (string1.includes(string2[i])) {return true;}}
-    return false;
-}
-
-function assertRequiredField(monformulaire){
-    return (monformulaire.elements["minuscule"].checked || monformulaire.elements["majuscule"].checked || monformulaire.elements["chiffre"].checked || monformulaire.elements["symbole"].checked) && (monformulaire.elements["nombrecar"].value !== "" && monformulaire.elements["date"].value !== "dd/mm/yyyy" && monformulaire.elements["categorie"].value !== "" && monformulaire.elements["categorie"].value !== "" && monformulaire.elements["siteapp"].value !== "");
 }
