@@ -68,6 +68,12 @@ function generer(){
         siteappli.textContent = monformulaire.elements["siteapp"].value;
         finalpassword.textContent = password;
 
+        nbcar.classList.add("c1");
+        date.classList.add("c2");
+        catego.classList.add("c3");
+        siteappli.classList.add("c4");
+        finalpassword.classList.add("c5");
+
         newLine.append(nbcar, date, catego, siteappli, finalpassword);
 
         var pwdTab = document.getElementById("montab");
