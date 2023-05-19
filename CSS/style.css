@@ -125,6 +125,7 @@ a {
 
 .c1 {
     background-color: purple;
+    color: white;
 }
 
 .c1:hover {
@@ -132,6 +133,7 @@ a {
 }
 
 .c2 {
+    color: white;
     background-color: red;
 }
 
