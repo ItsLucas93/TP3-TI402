@@ -58,3 +58,32 @@ function generer(){
 
 }
 
+
+function verify(password, monformulaire) {
+    var tab = [0, 0, 0, 0];
+    if (monformulaire.elements["minuscule"].checked) {tab[0] = 1;}
+    if (monformulaire.elements["majuscule"].checked) {tab[1] = 1;}
+    if (monformulaire.elements["chiffre"].checked) {tab[2] = 1;}
+    if (monformulaire.elements["symbole"].checked) {tab[3] = 1;}
+
+    for (var i = 0; i < 4; i++) {
+        switch (i) {
+            case 0: if (tab[i] === 1) {if (hasCharacter(password, minuscule) === false) return false}
+                break;
+            case 1: if (tab[i] === 1) {if (hasCharacter(password, majuscule) === false) return false}
+                break;
+            case 2: if (tab[i] === 1) {if (hasCharacter(password, chiffre) === false) return false}
+                break;
+            case 3: if (tab[i] === 1) {if (hasCharacter(password, carspecial) === false) return false}
+                break;
+        }
+    }
+    return true;
+}
+
+
+function hasCharacter(string1, string2) {
+    for (var i = 0; i < string1.length; i++) {if (string2.includes(string1[i])) {return true;}}
+    return false;
+}
+
